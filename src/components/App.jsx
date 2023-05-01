@@ -1,16 +1,21 @@
+import { Suspense, lazy } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Loader } from "./Loader/Loader";
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const TweetsPage = lazy(() => import('../pages/TweetsPage/TweetsPage'));
+
 export const App = () => {
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      Test Task
-    </div>
+    <>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tweets" element={<TweetsPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </Suspense>
+    </>
   );
 };
