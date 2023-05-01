@@ -34,3 +34,9 @@ export const Link = styled(NavLink)`
       background-color: #5CD3A8;
     }
 `;
+
+export const ImageWrapper = styled.div`
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 150px;
+`
