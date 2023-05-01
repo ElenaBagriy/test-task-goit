@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
         <BrowserRouter
-        // basename="/test-task-goit"
+        basename="/test-task-goit"
         >
           <App />
         </BrowserRouter>
